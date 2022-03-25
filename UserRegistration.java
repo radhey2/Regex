@@ -11,8 +11,12 @@ public class UserRegistration {
         System.out.println(validFirstName(FirstName));
         Scanner sc1 = new Scanner(System.in);
         System.out.println("enter last name");
-        String LastName = sc.next();
+        String LastName = sc1.next();
         System.out.println(validLastName(LastName));
+        Scanner sc3 = new Scanner(System.in);
+        System.out.println("enter Email Address");
+        String Email = sc3.nextLine();
+        System.out.println(validEmail(Email));
     }
 
     public static String validFirstName(String firstName) {
@@ -43,5 +47,20 @@ public class UserRegistration {
 
         return lastname;
     }
+
+    public static String validEmail(String email){
+
+
+        String Email ="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        boolean matchFind = email.matches(Email);
+        if (matchFind){
+            System.out.println("match found");
+        }
+        else {
+            System.out.println("match not found");
+        }
+        return email;
+    }
+
 
 }
